@@ -1,5 +1,6 @@
 import { NavLink } from "@remix-run/react";
 import { useState } from "react";
+import Toggle from "./Toggle";
 
 export default function NavBar() {
 
@@ -10,6 +11,7 @@ export default function NavBar() {
     };
 
     return (
+        
         <header className="sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-2">
             <div className="flex items-center justify-between px-4 py-2 sm:p-0">
                 <div>
@@ -49,8 +51,13 @@ export default function NavBar() {
                     <NavLink to="/about" className="mt-1 block py-1 underline-anim underline-animate sm:mt-0 sm:ml-4">
                         About
                     </NavLink>
+                    <NavLink to="/about" className="mt-1 block py-1 underline-anim underline-animate sm:mt-0 sm:ml-4">
+                        Projects
+                    </NavLink>
+                    <div class="pl-5"> <Toggle></Toggle> </div>
                 </div>
             </div>
         </header>
+        
     )
 }

@@ -80,6 +80,7 @@ async function getSingleBlogBySlug(slug) {
   };
   const response = await apiCall(query, variables);
   const result = await response.json();
+  console.log("result"+result)
   return await result.data.blogCollection.items[0]
 }
 
