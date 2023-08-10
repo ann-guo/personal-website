@@ -14,11 +14,7 @@ export default function NavBar() {
         
         <header className="sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-2">
             <div className="flex items-center justify-between px-4 py-2 sm:p-0">
-                <div>
-                    <NavLink to="/">
-                        <span role="img" aria-label="dog" className="text-5xl">🐶</span>
-                    </NavLink>
-                </div>
+                
                 <div className="flex justify-between items-center">
                     <button
                         type="button"
@@ -48,13 +44,9 @@ export default function NavBar() {
                     <NavLink to="/blog" className="block py-1 underline-anim underline-animate sm:ml-4">
                         Blog
                     </NavLink>
-                    <NavLink to="/about" className="mt-1 block py-1 underline-anim underline-animate sm:mt-0 sm:ml-4">
-                        About
-                    </NavLink>
-                    <NavLink to="/about" className="mt-1 block py-1 underline-anim underline-animate sm:mt-0 sm:ml-4">
-                        Projects
-                    </NavLink>
-                    <div class="pl-5"> <Toggle></Toggle> </div>
+                    
+                    
+                    <div class="pl-5 pt-1"> <Toggle></Toggle> </div>
                 </div>
             </div>
         </header>

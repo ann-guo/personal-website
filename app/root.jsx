@@ -31,7 +31,7 @@ export default function App() {
       </head>
 
     
-    <div className="bg-graph-paper min-h-screen dark:bg-graph-paper-dark dark:bg-gray-900">
+    <div className="bg-graph-paper min-h-screen dark:bg-graph-paper-dark dark:bg-gray-900 dark:text-white">
         <body>
           
           <NavBar />
