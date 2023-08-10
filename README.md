@@ -1,7 +1,7 @@
 # Personal Website #
 ## Technologies ##
-*Remix
-*Contentful
-*TailwindCSS
+- Remix
+- Contentful
+- TailwindCSS
 
 
