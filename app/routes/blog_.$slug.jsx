@@ -77,8 +77,8 @@ export default function () {
     return (
        
       
-        <div className="mx-2 sm:mx-4 md:mx-8 lg:mx-40 xl:mx-40 lg:px-20 xl:px-20">
-        <main className=" px-10 container">
+        <div className="mx-8 md:mx-16 lg:mx-32 xl:mx-32">
+        <main className="">
             <h1 className="mt-8 mb-8 text-3xl sm:text-6xl">{blog.title}</h1>
             <img src={blog.coverImage.url} width='100%' height='50%' className="mb-8" alt={blog.coverImage.description} />
             {documentToReactComponents(blog.content.json, richTextRenderOptions)}
