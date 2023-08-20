@@ -12,10 +12,19 @@ export default function NavBar() {
 
     return (
         
-        <header className="sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-2">
+        <header className="sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-2 bg-gray-100 dark:bg-true-gray-700">
             <div className="flex items-center justify-between px-4 py-2 sm:p-0">
                 
                 <div className="flex justify-between items-center">
+                <NavLink to="/" className="">
+                <div className="px-4 lg:px-8">
+                <a class="group text-3xl text-gray-900 dark:text-white font-bold" href="#">
+                    <span class="bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out">
+                        AG
+                    </span>
+                </a>
+                </div>
+                </NavLink>
                     <button
                         type="button"
                         className="focus:text-gray-800 hover:text-primary sm:hidden"
@@ -41,12 +50,16 @@ export default function NavBar() {
                     className={`${isOpen ? 'block' : 'hidden'
                         } sm:flex sm:justify-between sm:p-0 sm:text-lg`}
                 >
-                    <NavLink to="/blog" className="block py-1 underline-anim underline-animate sm:ml-4">
-                        Blog
+                    <NavLink to="/blog" className="block py-2 sm:ml-4">
+                    <a class="group" href="#">
+  <span class="bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+    Blog
+  </span>
+</a>
                     </NavLink>
                     
                     
-                    <div class="pl-5 pt-1"> <Toggle></Toggle> </div>
+                    <div class="pl-5 pt-2"> <Toggle></Toggle> </div>
                 </div>
             </div>
         </header>

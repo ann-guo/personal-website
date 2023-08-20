@@ -1,5 +1,5 @@
 import stylesheet from "~/tailwind.css";
-
+import { useState } from "react";
 import {
   Links,
   LiveReload,
@@ -29,22 +29,25 @@ export default function App() {
         <Meta />
         <Links />  
       </head>
+      
 
     
-    <div className="bg-graph-paper min-h-screen dark:bg-graph-paper-dark dark:bg-gray-900 dark:text-white">
-        <body>
-          
-          <NavBar />
-          
+    <body class="dark:bg-true-gray-800 dark:text-white">
+      <div >  
+          <NavBar/>
           <Outlet />
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
-          
-        </body>
-    </div>
-    
+        
+      </div>
+    </body>
+
+<body>
+  
+</body>
       
     </html>
+    
   );
 }

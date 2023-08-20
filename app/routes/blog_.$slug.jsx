@@ -2,7 +2,7 @@ import { json } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 import { getSingleBlogBySlug } from "../contentful.server"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 
 export const richTextRenderOptions = {
     renderNode: {
@@ -20,9 +20,24 @@ export const richTextRenderOptions = {
             );
         },
         [BLOCKS.PARAGRAPH]: (node, children) => {
+            if(node.content.find(item=>
+                item.marks?.find(mark=> mark.type==='code')
+                )
+            ) {        
             return (
-                <p className="text-gray-700 text-baseleading-relaxed mb-4 text-justify">{children}</p>
-            );
+                <div classname="mx-10">
+                    <pre class="bg-slate-300">
+                        <code className="text-gray-900 p-10">{children}</code>
+                    </pre>
+                </div>
+            
+            
+            )} else {
+                return (
+                    <p className="text-gray-700 mb-4 mt-4 dark:text-white">{children}</p>
+                )
+            }
+            
         },
         [BLOCKS.HEADING_1]: (node, children) => {
             return (
@@ -33,7 +48,14 @@ export const richTextRenderOptions = {
             return (
                 <h2 className="text-3xl">{children}</h2>
             )
-        }
+        },
+        renderMark: {
+            [MARKS.CODE]: (text) => {
+              return (
+                <pre><code>{text}</code></pre>
+              );
+            },
+          },
     },
 };
 
@@ -53,10 +75,16 @@ export const meta = ({ data }) => {
 export default function () {
     const { blog } = useLoaderData()
     return (
-        <main className="container mx-auto">
+       
+      
+        <div className="mx-2 sm:mx-4 md:mx-8 lg:mx-40 xl:mx-40 lg:px-20 xl:px-20">
+        <main className=" px-10 container">
             <h1 className="mt-8 mb-8 text-3xl sm:text-6xl">{blog.title}</h1>
             <img src={blog.coverImage.url} width='100%' height='50%' className="mb-8" alt={blog.coverImage.description} />
             {documentToReactComponents(blog.content.json, richTextRenderOptions)}
         </main>
+        </div>
+       
+        
     )
 }

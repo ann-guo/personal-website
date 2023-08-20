@@ -6,7 +6,7 @@ export default function Card({title, text, link, list}) {
 
     //external link from heroicons.com
     return (
-      <div class="bg-gray-100 p-7 text-slate-900 dark:text-white dark dark:bg-gray-700 transition-transform hover:translate-y-1 flex flex-col justify-between h-full">
+      <div class="bg-gray-100 p-7 text-slate-900 dark:text-white dark:bg-true-gray-700 flex flex-col justify-between h-full hover:translate-y-[-5px] transition-transform">
         <div>
           <h2 class="text-xl font-semibold mb-2">{title}</h2>
           <p class="text-left">{text}</p>

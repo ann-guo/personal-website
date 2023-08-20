@@ -10,24 +10,25 @@ export default function Toggle() {
   };
 
   useEffect(() => {
-      if (darkMode) {
-          localStorage.setItem("darkMode", "true");
-          window.document.documentElement.classList.add("dark");
-          
-          console.log("dark")
-      } else if (darkMode === false) {
-          localStorage.setItem("darkMode", "false");
-          window.document.documentElement.classList.remove("dark");
-          console.log("light")
-      } else {
+    if (darkMode) {
+      localStorage.setItem("darkMode", "true");
+      window.document.documentElement.classList.add("dark");
+        
+      console.log("dark");
+    } else {
+      localStorage.setItem("darkMode", "false");
+      window.document.documentElement.classList.remove("dark");
+      console.log("light");
+    }
+      /*else {
           setDarkMode(localStorage.getItem("darkMode")==="true");
-          console.log("test")
-      }
+          //console.log("test")
+      }*/
   }, [darkMode]);
 
     return (
-        <div>
-            <button onClick={switchMode}>
+      <div>
+          <button onClick={switchMode}>
           {darkMode ? (
             <svg className="w-8 h-8 md:w-7 md:h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
@@ -47,12 +48,9 @@ export default function Toggle() {
               />
             </svg>
           )}
-        </button>
+          </button>
         
-</div>
-        
-        
-
-      
+      </div>
+         
     )
 }
